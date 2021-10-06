@@ -9,7 +9,17 @@ function inverteArray(array) {
 
 // EXERCÍCIO 02
 function retornaNumerosParesElevadosADois(array) {
-  
+  let filtro = (item) =>{
+    if (item % 2 == 0){
+      return item
+    }
+  }
+  let filtrarNumeroPar = array.filter(filtro)
+  let elevarAoQuadrado = (item) =>{
+    return item*item
+  }
+  const novoArray = filtrarNumeroPar.map(elevarAoQuadrado) 
+  return novoArray
 }
 
 // EXERCÍCIO 03
