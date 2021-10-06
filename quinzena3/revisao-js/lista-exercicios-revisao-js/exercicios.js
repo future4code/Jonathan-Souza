@@ -46,7 +46,10 @@ function retornaMaiorNumero(array) {
 
 // EXERCÍCIO 05
 function retornaQuantidadeElementos(array) {
-  
+  function tamanhoDaLista (lista) {
+    return lista.length
+  }
+  return tamanhoDaLista(array)
 }
 
 // EXERCÍCIO 06
