@@ -24,7 +24,13 @@ function retornaNumerosParesElevadosADois(array) {
 
 // EXERCÍCIO 03
 function retornaNumerosPares(array) {
- 
+  let filtroNumeropar = (item) =>{
+    if (item % 2 == 0){
+      return item
+    }
+  }
+  let filtrarNumeroPar = array.filter(filtroNumeropar)
+  return filtrarNumeroPar
 }
 
 // EXERCÍCIO 04
