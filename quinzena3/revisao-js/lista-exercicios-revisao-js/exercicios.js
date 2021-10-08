@@ -79,20 +79,58 @@ function retornaExpressoesBooleanas() {
   }
 
   fazerListaBooleana()
-  
+
   return arrayBooleanos
 }
 
 // EXERCÍCIO 07
 function retornaNNumerosPares(n) {
+  
+  arrayNumerosParesSelicionados = [];
 
+  let separarNumerosPares = () =>{
+
+    let todosOsNumerosPares = [];
+    let numeros1Ao500 = [];
+
+    for (let i = 0; i < 500; i++) {
+      numeros1Ao500.push(i)
+    };
+
+    for (let i = 0; i < numeros1Ao500.length; i++) {
+      if (i % 2 === 0) {
+        todosOsNumerosPares.push(i)
+      };    
+    };
+    
+    return todosOsNumerosPares
+  };
+
+  let selicionarNumerosEscolhidos = (numerosPares) => {
+    for (let i = 0; i < n; i++) {
+      arrayNumerosParesSelicionados.push(numerosPares[i])
+    };
+  };
+
+  selicionarNumerosEscolhidos(separarNumerosPares());
+
+  return arrayNumerosParesSelicionados
 }
 
 // EXERCÍCIO 08
 function checaTriangulo(a, b, c) {
-  // return 'Escaleno'
-  // return 'Equilátero'
-  // return 'Isósceles'
+  
+  let verificarLados = (a, b, c) => {
+    if (a === b && a === c) {
+      return "Equilátero"
+    }else if (a === b && a !== c){
+      return "Isósceles"
+    }else if (a !== b && a !== c){
+      return "Escaleno"
+    }
+  }
+
+  return verificarLados(a, b, c)
 }
 
 // EXERCÍCIO 09
