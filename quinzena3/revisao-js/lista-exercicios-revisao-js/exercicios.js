@@ -173,17 +173,93 @@ function comparaDoisNumeros(num1, num2) {
 
 // EXERCÍCIO 10
 function segundoMaiorEMenor(array) {
+    
+  let novoArray = []
 
+  let maiorNumeroOriginal = -Infinity
+  let menorNumeroOriginal = Infinity
+
+  let segundoMaior = -Infinity
+  let segundoMenor = Infinity
+
+   const maiorNumero = (array) =>{
+    for (let index = 0; index < array.length; index++) {
+      if (array[index] > maiorNumeroOriginal){
+        maiorNumeroOriginal = array[index]
+      }
+    }
+  }
+  maiorNumero(array)
+
+  const menorNumero = (array) =>{
+    for (let index = 0; index < array.length; index++) {
+      if (array[index] < menorNumeroOriginal){
+        menorNumeroOriginal = array[index]
+      }
+    }
+  }
+  menorNumero(array)
+
+  let maiorNumeroFiltrado = array.filter(function(item){
+      return item < maiorNumeroOriginal
+  })
+  
+  let menorNumeroFiltrado = array.filter(function(item){
+      return item > menorNumeroOriginal
+  })
+
+  const segundoMaiorNumero = (array) =>{
+    for (let index = 0; index < array.length; index++) {
+      if (array[index] > segundoMaior){
+        segundoMaior = array[index]
+      }
+    }
+  }
+  segundoMaiorNumero(maiorNumeroFiltrado)
+
+  const segundoMenorNumero = (array) =>{
+    for (let index = 0; index < array.length; index++) {
+      if (array[index] < segundoMenor){
+        segundoMenor= array[index]
+      }
+    }
+  }
+  segundoMenorNumero(menorNumeroFiltrado)
+
+  novoArray.push(segundoMaior)
+  novoArray.push(segundoMenor)
+    
+  return novoArray
 }
 
 // EXERCÍCIO 11
 function ordenaArray(array) {
+  
+  function bubbleSort(item) {
+    for (let last = item.length -1; last > 0; last --){
+      for (let i = 0; i < last; i++){
+       if (item[i] > item[i + 1]){
+         [item[i], item[i + 1]] = [item[i + 1], item[i]]
+       } 
+      }
+    }
+    return item
+  }
 
+  return bubbleSort(array)
 }
 
 // EXERCÍCIO 12
 function filmeFavorito() {
+  
+  let filmeFavorito = {
+    nome: "O Diabo Veste Prada",
+    ano: 2006,
+    diretor: "David Frankel",
+    atores: ["Meryl Streep", "Anne Hathaway", "Emily Blunt", "Stanley Tucci"]
+  }
 
+  return filmeFavorito
 }
 
 // EXERCÍCIO 13
