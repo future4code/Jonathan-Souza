@@ -326,26 +326,59 @@ function menoresDe18(arrayDePessoas) {
 // EXERCÍCIO 17A
 function multiplicaArrayPor2(array) {
 
+  const multiplarPor2 = array.map(function(item){
+    return item * 2
+  })
+
+  return multiplarPor2
 }
 
 // EXERCÍCIO 17B
 function multiplicaArrayPor2S(array) {
+  
+  const multiplarPor2 = array.map(function(item){
+    return item * 2
+  })
 
+  const passarParaString = multiplarPor2.map(function(item){
+    return item.toString()
+  })
+
+  return passarParaString
 }
 
 // EXERCÍCIO 17C
 function verificaParidade(array) {
 
+  const verificarParOuImpar = array.map(function(item){
+    if (item % 2 === 0){
+      return `${item} é par`
+    }else{
+      return `${item} é ímpar`
+    }
+  })
+
+  return verificarParOuImpar
 }
 
 // EXERCÍCIO 18A
 function retornaPessoasAutorizadas(pessoas) {
 
+  const pessoasAutorizadas = pessoas.filter(function(item){
+    return item.altura >= 1.5 && item.idade > 14 && item.idade < 60 
+  })
+
+  return pessoasAutorizadas
 }
 
 // EXERCÍCIO 18B
 function retornaPessoasNaoAutorizadas(pessoas) {
 
+  const pessoasNaoAutorizadas = pessoas.filter(function(item){
+    return item.altura < 1.5 || item.idade <= 14 || item.idade > 60
+  })
+
+  return pessoasNaoAutorizadas
 }
 
 // EXERCÍCIO 19A
