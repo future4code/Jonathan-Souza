@@ -305,12 +305,22 @@ function anonimizaPessoa(pessoa) {
 
 // EXERCÍCIO 16A
 function maioresDe18(arrayDePessoas) {
+  
+  const filtrarAdultos = arrayDePessoas.filter(function(item){
+    return (item.idade >= 18)
+  })
 
+  return filtrarAdultos
 }
 
 // EXERCÍCIO 16B
 function menoresDe18(arrayDePessoas) {
+  
+  const filtrarAdolescente = arrayDePessoas.filter(function(item){
+    return (item.idade < 18)
+  })
 
+  return filtrarAdolescente
 }
 
 // EXERCÍCIO 17A
