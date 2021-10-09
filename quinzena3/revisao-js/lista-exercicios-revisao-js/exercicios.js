@@ -265,16 +265,42 @@ function filmeFavorito() {
 // EXERCÍCIO 13
 function imprimeChamada() {
   // "Venha assistir ao filme NOME_DO_FILME, de ANO, dirigido por DIRECAO e estrelado por ELENCO."
+
+  let filmeFavorito = {
+    nome: "O Diabo Veste Prada",
+    ano: 2006,
+    diretor: "David Frankel",
+    atores: ["Meryl Streep", " Anne Hathaway", " Emily Blunt", " Stanley Tucci"]
+  }
+
+  return `Venha assistir ao filme ${filmeFavorito.nome}, de ${filmeFavorito.ano}, dirigido por ${filmeFavorito.diretor} e estrelado por ${filmeFavorito.atores}.`
 }
 
 // EXERCÍCIO 14
 function criaRetangulo(lado1, lado2) {
 
+  let retangulo = {
+    largura: lado1,
+    altura: lado2,
+    perimetro: 2 * (lado1 + lado2),
+    area: lado1 * lado2
+  }
+
+  return retangulo
 }
 
 // EXERCÍCIO 15
 function anonimizaPessoa(pessoa) {
+ 
+  let anonimo = (pessoa) =>{
+    const receber = pessoa
+    const mudarNome ={
+      ...receber, nome: "ANÔNIMO"
+    } 
+    return mudarNome
+  }
 
+  return anonimo(pessoa)
 }
 
 // EXERCÍCIO 16A
