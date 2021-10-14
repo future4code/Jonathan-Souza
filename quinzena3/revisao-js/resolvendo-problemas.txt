@@ -1,0 +1,30 @@
+**Exercícios de fixação do conhecimento**
+
+1 - Quais são os 7 passos fundamentais para a resolução de problemas e como eles podem nos ajudar a solucionar nossos desafios de programação?
+
+Os 7 passos fundamentais para a resolução dos problemas para elaborar um código são:
+    1 - Ter atenção no enunciado
+        - Esta etapa é ideial para ter uma noção previa do que irá ser feito e ter uma ideia grosseira de como o código sera feito, alem de existir
+        palavras chaves que acabam ajudando;
+    
+    2 - Retirar informações Relevantes
+        - Essa etapa vem em conjunto com a anterior na qual assim que for lendo o enunciado podemos retirar muitas dicas de como vai ocorrer e quais
+        sintaxes iremos utilizar no codigo como por exemplo: se irá ter um array, loop, objeto, array de objeto, etc...;
+
+    3 - Pensar entradas e saidas
+        - Depois de ter retirado as dicas e o ter uma ideia de como irá ocorrer o passo a passo chegamos nesta etapa na qual ajuda a nós ter uma ideia
+        mais precisa de como vão ocorrer as entradas e saidas.
+
+    4 - Fazer um esquema visual
+        - Depois de pensar como vão ser as entradas e saidas para ter uma noção e deixar mais facil o entendimento é bom fazer um esquema visual como um
+        fluxograma ou algo semelhante, tendo assim uma ideia exata de como vai ser a lógica do código;
+
+    5 - Criar código feio;
+        - Nesta etapa com o auxilio do esquema visual será de fato traduzir a logica feita no fluxograma para a linguagem no JS, não importanto tanto 
+        como irá ser sua parte "visual", porem sempre respeitando o minimo de organização para poupar mais trabaçho futuro;
+    
+    6 - Testar força-bruta
+        - Nesta etapa iremos testar o codigo digitado anteriomente e ver se precisa fazer algum debug e ver se realmente a logica que foi feita previamente
+        esta atendendo todos os requisitos abordados;
+    7 - Refatorar
+        - Esta etapa já é a parte de ajeitar o "código feio" pensar em como deixar o código mais legivel e mais enchuto do que feito anteriomente.
