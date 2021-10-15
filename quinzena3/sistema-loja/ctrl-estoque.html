@@ -4,23 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="index.css" media="screen" />
     <title>Controle de Estoque</title>
 </head>
 <body>
-    <div>
-        <p>Skins do Agenor</p>
-    </div>
+    <body class="background">
+        <div class="tamanho-logotipo">
+            <a href="index.html"><img class="tamanho-logotipo" src="Imagens/logotipo.png" alt="logotipo escrita Agenor's skins"></a>
+        </div>
     
-    <div>
-        <a href="index.html">Página Inicial</a>
-        <a href="ctrl-estoque.html">Controle de Estoque</a>
-        <a href="add-produto.html">Adicionar Produto</a>
-        <a href="funcionarios.html">Funcionários</a>
-    </div>
+        <div class ="barra-de-navegacao">
+            <div class="espaçamento">
+                <div class="inline">
+                    <a href="ctrl-estoque.html" class="itens"><img class="tamanho-itens"src="Imagens/logotipo-itens.png"><span>itens</span></a>
+                </div>
+                <div class="inline">
+                    <a href="add-produto.html" class="branco"><img class="tamanho-itens" src="Imagens/logo-adicionar.png"><span>Adicinar produto</span></a>
+                </div>
+                <div class="inline">
+                    <a href="funcionarios.html" class="branco"><img class="tamanho-itens" src="Imagens/logo-funcinarios.webp"> <span>Funcionarios</span></a>
+                </div>
+            </div> 
+        </div>
 
-    <h2>Controle de Estoque</h2>
+    <h2>Itens</h2>
 
-    <table>
+    <table class="branco">
         <tr>
             <th>Foto</th>
             <th>Descrição</th>
@@ -28,43 +37,61 @@
             <th>Quantidade disponível</th>
         </tr>
 
-        <tr>
+        <tr class="centralizar-tabela">
             <td><img src="Imagens/ak-47-tons-de-preto-ft.png" alt="arma ak-47 toda tingida de preta"/></td>
             <td> Ak-47 tons de preto testada em Campo </td>
             <td>R$ 21,73 </td>
             <td> 4 </td>
         </tr>
 
-        <tr>
+        <tr class="centralizar-tabela">
             <td><img src="Imagens/awp-gungnir-fn.png" alt="arma Awp azul com detalhes trabalhados em branco"/></td>
             <td> Awp gungnir nova de fabrica </td>
             <td>R$ 61.561,50 </td>
             <td>1</td>
         </tr>
 
-        <tr>
+        <tr class="centralizar-tabela">
             <td><img src="Imagens/faca-ursus-degrade-fn.png" alt="Faca ursus com um degrade da ponta da arma violeta ate a base ficando roxa"/></td>
             <td> Faca ursus degrade nova de fabrica </td>
             <td> R$ 2.229,28 </td>
             <td> 2 </td>
         </tr>
 
-        <tr>
+        <tr class="centralizar-tabela">
             <td><img src="Imagens/m4a1-s-vidro-chumbado-mw.png" alt="Arma m4a1-s com um detalhada com um mosaico azul, laranja e amarelo"/></td>
             <td> m4a1-s vidro chumbado pouco usada </td>
             <td> R$ 26,35 </td>
             <td> 6 </td>
         </tr>
         
-        <!-- Crie mais uma linha desta tabela abaixo \/ -->
-        <tr>
+        <tr class="centralizar-tabela">
             <td><img src="Imagens/mac-10-discoteca-fn.png" alt="Arma mac10 com detalhe em degrade onde a ponta começa amarela e vai até a rosa"></td>
             <td>Mac10 discoteca Nova de fabrica </td>
             <td>R$ 59,17 </td>
             <td>3</td>
         </tr>
 
-    </table>
+        <tr class="centralizar-tabela">
+            <td><img src="Imagens/canivete-borboleta-sapphire.png"></td>
+            <td>Canivete borboleta doppler sapphire</td>
+            <td>R$ 100.000,00 </td>
+            <td>2</td>
+        </tr>
 
+        <tr class="centralizar-tabela">
+            <td><img src="Imagens/ak-47-stattrak-serpente.png"></td>
+            <td>Ak-47 stattrak serpente de fogo</td>
+            <td>R$ 2000,00 </td>
+            <td>6</td>
+        </tr>
+
+        <tr class="centralizar-tabela">
+            <td><img src="Imagens/ak-47-raio-x-fn.png"></td>
+            <td>Ak-47 raio-x</td>
+            <td>R$ 20.000,00 </td>
+            <td>1</td>
+        </tr>
+    </table>
 </body>
 </html>
