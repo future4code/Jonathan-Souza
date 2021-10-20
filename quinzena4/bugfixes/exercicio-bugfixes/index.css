@@ -129,11 +129,18 @@ td button {
 
 .alinhar{
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .tamanho-mercadoria{
     width: 40px;
     height: 40px;
+}
+
+.centro{
+    text-align: center;
+    margin-top: 150px;
 }
 
 #back-button {
@@ -144,6 +151,7 @@ td button {
     border-radius: 5px;
     font-size: 10px;
     color: black;
+    
 }
 
 #back-button:hover {
