@@ -121,6 +121,12 @@ td button {
     height: 100px;
 }
 
+.container-input{
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+}
+
 .alinhar{
     text-align: center;
 }
