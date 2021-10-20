@@ -119,6 +119,11 @@ td button {
     text-align: center;
 }
 
+.tamanho-mercadoria{
+    width: 40px;
+    height: 40px;
+}
+
 #back-button {
     background-color: white;
     width: 100px;
