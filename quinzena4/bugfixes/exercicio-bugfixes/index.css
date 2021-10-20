@@ -99,6 +99,15 @@ table {
     width: 60%;
 }
 
+button:hover{
+    background-color: #e4ca5a;
+}
+
+button:active{
+    color: white;
+    background-color:#af9c44 ;
+}
+
 td button {
     background-color: #fadf63;
     width: 150px;
