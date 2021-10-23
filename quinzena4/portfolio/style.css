@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    color: #141c3a;
+    font-size: 35px;
+}
+
+button:hover{
+    background-color: #7510F7;
+    color: whitesmoke;
+}
+
+a > button{
+    height: 45px; 
+    width: 100px;
+    border-radius: 20px;
+    justify-content: center;
+    text-align: center;
+    background-color: transparent;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    color: #7510F7;
+    border-color: #7510F7;
+    
+}
+
+#container-grid-body{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 60px 1fr 60px;
+}
+
+#container-flex-header{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 0px 10px;
+    justify-content:space-around;
+}
+
+#container-grid-main{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    padding: 70px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header-menu{
+    display: inline;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.link{
+    color: #7510F7 ;
+    text-decoration: none;
+}
+
+.foto-perfil{
+    height: 150px;
+    width: 150px;
+    border-color: darkgray;
+    border-radius: 125px;
+}
+
+.ajustar-texto{
+    padding: 10px 90px;  
+}
+
+.resumo-home{
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.formatar-corpo-resumo{
+    color: white;
+    text-align: center;
+    padding: 15px;    
+}
+
+.cor{
+    background-color:#7510F7;
+    width: 100%;
+}
