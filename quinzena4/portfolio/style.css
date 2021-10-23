@@ -43,9 +43,17 @@ a > button{
 
 #container-grid-main{
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     justify-items: center;
     padding: 70px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#container-tabela-home{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    padding-top: 15px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -85,4 +93,14 @@ a > button{
 .cor{
     background-color:#7510F7;
     width: 100%;
+    text-align: center;
+}
+
+.coluna-centralizada{
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.coluna{
+    background-color: #fff;
 }
