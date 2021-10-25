@@ -1,3 +1,5 @@
+/* CSS PAGINA HOME */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,6 +9,7 @@ h1{
     color: #141c3a;
     font-size: 35px;
 }
+
 
 button:hover{
     background-color: #7510F7;
@@ -27,10 +30,14 @@ a > button{
     
 }
 
+li {
+    margin-top: 10px;
+}
+
 #container-grid-body{
     display: grid;
     height: 100vh;
-    grid-template-rows: 60px 1fr 60px;
+    grid-template-rows: 60px 1fr 200px;
 }
 
 #container-flex-header{
@@ -43,9 +50,9 @@ a > button{
 
 #container-grid-main{
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 0.7fr 0.5fr 0.5fr 1fr 0.5fr 0.5fr 0.5fr;
     justify-items: center;
-    padding: 70px;
+    padding-top: 70px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -55,6 +62,23 @@ a > button{
     justify-items: center;
     padding-top: 15px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#container-grid-contato{
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   justify-content: baseline;
+   text-align: center;
+   padding-top: 80px;
+   color: white;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#container-flex-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
 }
 
 .header-menu{
@@ -87,7 +111,7 @@ a > button{
 .formatar-corpo-resumo{
     color: white;
     text-align: center;
-    padding: 15px;    
+    padding: 15px;
 }
 
 .cor{
@@ -96,11 +120,178 @@ a > button{
     text-align: center;
 }
 
-.coluna-centralizada{
-    -webkit-box-pack: center;
-    justify-content: center;
+.coluna{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-.coluna{
-    background-color: #fff;
+.card{
+    background-color: white;
+    width: 35%;
+    height: 500px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.position{
+    padding-top: 30px;
+}
+
+.titulo-card{
+    padding: 10px;
+    color: #141c3a;
+}
+
+.textinho-card{
+    padding: 10px;
+    font-family: europa, sans-serif;
+    text-align: center;
+    color: #141c3a;
+}
+
+.linguagens-estudadas{
+    font-family: europa, sans-serif;
+    font-size: 18px;
+    color: #7510F7;
+    padding-top: 50px;
+}
+
+.lista-linguas{
+    font-family: europa, sans-serif;
+    color: #141c3a;
+    padding-top: 15px;
+}
+
+.titulo-lista{
+    font-family: europa, sans-serif;
+    font-size: 18px;
+    color: #7510F7;
+    padding-top: 30px;
+}
+
+.lista{
+    list-style: none;
+    color: #141c3a;
+    padding: 5px;
+}
+
+.tamanho-blackjack{
+    height: 150px;
+}
+
+.titulo-projeto{
+    padding-top: 100px;
+}
+
+.logo-blackjack{
+    padding-top: 20px;
+}
+
+.titulo-softskil{
+    font-family: europa, sans-serif;
+    font-size: 18px;
+    color: #7510F7;
+    padding-top: 15px
+}
+
+.titulo-estudo{
+    padding-top: 70px;
+}
+
+.logo-estudo{
+    height: 130px;
+    width: 225px;
+}
+
+.contato{
+    text-align: center;
+}
+
+.botao-contato-final{
+    width: 300px;
+}
+
+.caixa{
+    border-radius: 12px;
+    background-color: #141c3a;
+    width: 1000px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cor-footer{
+    background-color: #7510F7;
+}
+
+.teste{
+    background-color: #7510F7;
+    width: 100%;
+    height: 300px;
+}
+
+
+/* CSS PAGINA CONTATO */
+#container-grid-body-contato{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 60px 1fr 100px;
+}
+
+.logo-footer{
+    height: 95px;
+}
+
+.principal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+}
+
+.container-form{
+    text-align: center;
+    color: white;
+    background-color: #141c3a;
+    width: 500px;
+    height: 500px;
+    padding: 20px 20px;
+    border-radius: 12px;
+}
+
+.form-contact{
+    margin-top: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.style{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+.input-style{
+    border-color: #7510F7;
+    border-radius: 14px;
+}
+
+.form-input-text{
+    height: 100px;
+    border-color: #7510F7;
+    border-radius: 14px;
+}
+
+.button-contact{
+    margin-top: 20px;
+    height: 45px; 
+    width: 100px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: transparent;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    color: #7510F7;
+    border-color: #7510F7;
+    
 }
