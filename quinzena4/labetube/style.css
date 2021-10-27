@@ -1,0 +1,116 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/* style index */
+#container-grid-body{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 60px 1fr 40px;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#container-flex-header{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(13, 13, 13);
+    height: 100%;
+    align-items: center;
+    padding-left:  15px;
+    padding-right: 50px;
+    justify-content: space-between;
+}
+
+#container-flex-footer{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(13, 13, 13);
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#container-grid-main{
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 0px 25px;
+    padding: 20px;
+}
+
+.barra-de-pesquisa{
+    display: flex;
+    flex-direction: row;
+}
+
+.barra-estilo{
+    border-radius: 0px;
+    height: 22px;
+    width: 400px;
+    border-color:#d8ff33 ;
+}
+
+.background-botao{
+    height: 26px;
+    width: 35px;
+    background-color: #d8ff33;
+    display: flex;
+    align-items: center;
+}
+
+.botao{
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    display: flex;
+}
+
+.img{
+    height: 35px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: darkgray;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.imagem-card{
+    height: 170px;
+}
+
+.rotulo-card{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+    background-color: rgb(13, 13, 13);
+}
+
+/* style Video especifico */
+
+#container-flex-main{
+    display:flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+.video{
+    height: 315px;
+    width: 560px;
+}
