@@ -1,0 +1,87 @@
+html, body {height:100%;}
+
+.tamanho-logotipo{
+    display: inline;
+    width: 200px;
+    height: 75px;
+}
+
+.barra-de-navegacao {
+    background-color: rgba(19, 18, 18, 0.938);
+}
+
+.branco {
+    color: blanchedalmond;
+    margin-right: 40px;
+    justify-content: center;
+}
+
+.espaçamento{
+    margin-left: 500px;
+}
+
+.background {
+    background-color: rgb(0, 0, 0);
+}
+
+.tamanho-itens{
+    width: 20px;
+}
+
+.itens {
+    display: inline;
+    color: blanchedalmond;
+    margin-right: 40px;
+    justify-content: center;
+}
+
+.inline{
+    display: inline;
+}
+
+.footer{
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+
+.banner{
+    margin-top: 30px;
+    margin-left: 150px;
+    height: 225px;
+    width: 75%;
+}
+
+
+.centralizar {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.skins-destaque {
+    margin-top: 30px;
+    margin-left: 45%;
+    color: rgb(171, 238, 45);
+}
+
+.vertical {
+    color: blanchedalmond;
+ transform: rotate(-90deg);
+ -webkit-transform: rotate(-90deg); /* Safari/Chrome */
+ -moz-transform: rotate(-90deg); /* Firefox */
+ -o-transform: rotate(-90deg); /* Opera */
+ -ms-transform: rotate(-90deg); /* IE 9 */
+}
+
+.centralizar-tabela{ 
+    text-align: center;
+    vertical-align: middle;
+}
+
+.buscar{
+    background-color: rgba(19, 18, 18, 0.938);
+    color: blanchedalmond;
+    display: inline;
+    margin-left: 30%;
+    padding-bottom: 10px;   
+}
