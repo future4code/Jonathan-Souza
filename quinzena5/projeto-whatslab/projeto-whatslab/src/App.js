@@ -60,15 +60,20 @@ class MeuComponenteReact extends React.Component {
 
     this.setState({conversa: novaConversa})
   }
-
+  
+  
+  
 	render() {
     
+    const lista = this.state.conversa
+  
+    const imprimir = lista.map(i => <div><h5>{i.usuario}</h5> <p>{i.mensagem}</p></div>)
+
     return (
       <ContainerCard>
         <Card>
           <div>
-            <span><strong>{this.state.conversa}</strong></span>
-            <span>{this.state.conversa.mensagem}</span>
+            {imprimir}
           </div>
           <div>
 
