@@ -1,32 +1,29 @@
 import React from "react"
 
 
-
 export default class app extends React.Component{
-    state = {
-        concluido: false
-    }
+
 
   render(){
     return(
       <div>
         <h4>ETAPA 1 - DADOS GERAIS</h4>
         <form>
-          <label>1. qual seu nome?</label>
+          <p>1. qual seu nome?</p>
             <input type="text" />
-          <label>2. qual sua idade?</label>
+          <p>2. qual sua idade?</p>
             <input type="number" />
-          <label>3. qual seu email?</label>
+          <p>3. qual seu email?</p>
             <input type="text" />
-          <label>4. qual a sua escolaridade?</label>
-          <select>
-              <option>Ensino médio incompleto</option>
-              <option>Ensino médio completo</option>
-              <option>Ensino superior incompleto</option>
-              <option>Ensino superior completo</option>
-          </select>
-          <button>proxima etapa</button>
+          <p>4. qual a sua escolaridade?</p>
+            <select>
+                <option>Ensino médio incompleto</option>
+                <option>Ensino médio completo</option>
+                <option>Ensino superior incompleto</option>
+                <option>Ensino superior completo</option>
+            </select>
         </form>
+        <button onClick={this.props.irParaEtapa2}>proxima etapa</button>
       </div>
     )
   }
