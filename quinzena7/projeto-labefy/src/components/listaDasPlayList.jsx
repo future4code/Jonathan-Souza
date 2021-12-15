@@ -12,7 +12,7 @@ class App extends React.Component {
 
   componentDidMount(){
     this.getAllPlaylist()
-    }
+  }
 
   getAllPlaylist = () =>{
     //  função que pega todas as playlists que estão cadastrada no banco de dados
