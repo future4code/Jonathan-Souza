@@ -6,21 +6,27 @@
 //    paramentros enviados
 
 // B)
+let red, blue
+red = '\u001b[31m';
+blue = '\u001b[34m';
+    
 
-const nome = process.argv[2]
-const idade = process.argv[3]
-
-const fraseRetornada = `Olá, ${nome}! Você tem ${idade} anos.`
-
-console.log(fraseRetornada);
-
-// C)
-
-
-// const nome = process.argv[2]
-// const idade = process.argv[3]
-// const idadeFutura = parseInt(idade) + 7
-
-// const fraseRetornada = `Olá, ${nome}! Você tem ${idade} anos. Em sete anos você terá ${idadeFutura}`
-
-// console.log(fraseRetornada);
+if (process.argv[3] !== undefined){
+    const nome = process.argv[2]
+    const idade = process.argv[3]
+    
+    const fraseRetornada = `Olá, ${nome}! Você tem ${idade} anos.`
+    
+    console.log(blue, fraseRetornada);
+    
+    // C)
+    
+    
+    const idadeFutura = parseInt(idade) + 7
+    
+    const fraseRetornada2 = `Olá, ${nome}! Você tem ${idade} anos. Em sete anos você terá ${idadeFutura}`
+    
+    console.log(blue, fraseRetornada2);
+}else{
+    console.log(red,"esperava pelo menos dois parametros, um nome e idade respectivamente");
+}
