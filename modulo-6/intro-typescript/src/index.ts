@@ -56,7 +56,7 @@ console.log("Exercicio 4  --> ", comparaDoisNumeros(5,10))
 
 function checaRenovacaoRG(anoAtual:number, anoNascimento:number, anoEmissao:number) {
 
-    let idade = anoAtual - anoNascimentoadd
+    let idade = anoAtual - anoNascimento
     let tempoCarteira = anoAtual - anoEmissao
  
     if(idade <= 20 ) {
