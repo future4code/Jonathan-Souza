@@ -62,3 +62,63 @@ const filtroColaboradores = (colaboradores: Colaboradores) => {
     return colaboradores.filter(i => i.setor === SETOR.MARKETING && i.presencial === true)
 }
 console.log("Exercicio 4 -----> ",filtroColaboradores(colaboradores));
+
+// Exercicio 5
+
+enum ROLE {
+    USER = "User",
+    ADMIN = "Admin"
+}
+
+type Usuarios = {
+    name: string,
+    email: string,
+    role: ROLE
+}[]
+
+const listaUsuario: Usuarios = [
+	{name: "Rogério", email: "roger@email.com", role: ROLE.USER},
+	{name: "Ademir", email: "ademir@email.com", role: ROLE.ADMIN},
+	{name: "Aline", email: "aline@email.com", role: ROLE.USER},
+	{name: "Jéssica", email: "jessica@email.com", role: ROLE.USER},  
+	{name: "Adilson", email: "adilson@email.com", role: ROLE.USER},  
+	{name: "Carina", email: "carina@email.com", role: ROLE.ADMIN}      
+] 
+
+const filtrarEmailAdmin = (usuarios: Usuarios): string[] => {
+    let emailsAdmin: string[] = []
+    const admin = usuarios.filter(i => i.role === ROLE.ADMIN)
+    admin.forEach(i => emailsAdmin.push(i.email))
+    return emailsAdmin
+}
+console.log("Exercicio 5 -----> ", filtrarEmailAdmin(listaUsuario));
+
+// Exercicio 6
+
+type Clientes = {
+    cliente: string,
+    saldoTotal: number,
+    debitos:number[]
+}[]
+
+const ListaDosClientes: Clientes= [
+	{ cliente: "João", saldoTotal: 1000, debitos: [100, 200, 300] },
+	{ cliente: "Paula", saldoTotal: 7500, debitos: [200, 1040] },
+	{ cliente: "Pedro", saldoTotal: 10000, debitos: [5140, 6100, 100, 2000] },
+	{ cliente: "Luciano", saldoTotal: 100, debitos: [100, 200, 1700] },
+	{ cliente: "Artur", saldoTotal: 1800, debitos: [200, 300] },
+	{ cliente: "Soter", saldoTotal: 1200, debitos: [] }
+]
+
+const descontarDebitos = (lista: Clientes): any => {
+    
+    const ListaAtualizada: Clientes = lista.map((cliente)=>{
+        let Somadebitos:number = cliente.debitos.reduce((total, numero) => total + numero, 0)
+
+        cliente["saldoTotal"] -= Somadebitos; 
+        return cliente
+    })
+
+    return ListaAtualizada.filter(i => i.saldoTotal < 0)
+}
+console.log("Exercicio 6 -----> ", descontarDebitos(ListaDosClientes));
