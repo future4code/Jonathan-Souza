@@ -1,0 +1,21 @@
+###
+GET http://localhost:3003/users
+
+###
+
+GET http://localhost:3003/users/ADMIN
+
+###
+GET http://localhost:3003/users/filter/Alice
+
+###
+POST  http://localhost:3003/users
+Content-Type: application/json
+
+ {
+    "id": 1,
+    "name": "",
+    "email": "teste@teste.com",
+    "type": "NORMAL",
+    "age": 12
+ }
