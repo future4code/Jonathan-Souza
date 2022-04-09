@@ -1,0 +1,22 @@
+###
+POST http://localhost:3003/users
+Content-Type: application/json
+
+{
+    "name": "jon",
+    "CPF": "111.111.123-21",
+    "birthday": "21/10/2000"
+}
+
+###
+GET http://localhost:3003/users/111.111.123-21
+
+###
+PUT http://localhost:3003/users/2000
+Content-Type: application/json
+
+{
+    "name": "jon",
+    "CPF": "111.11.123-21",
+    "balance": "20"
+}
