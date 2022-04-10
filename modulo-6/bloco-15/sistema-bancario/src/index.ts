@@ -18,12 +18,24 @@ const server = app.listen(process.env.PORT || 3003, () => {
     }
 });
 
+// chamar o array de usarios
+app.get("/allusers", (req:Request, res:Response) => {
+    res.status(200).send(users)
+})
+
 // criar novo usuario (conta)
 app.post("/users", (req:Request, res:Response) => {
     let errorCode = 400
     try {
         
         const {name, CPF, birthday}: Users = req.body
+
+        // procura se usario existe
+        const findUser = users.find(e => e.CPF === CPF)
+        if(findUser !== undefined){
+            errorCode = 409
+            throw new Error("cpf already cadastred")
+        }
 
         // pega o ano atual
         const currentTime = new Date();
@@ -88,8 +100,10 @@ app.put("/users/:balance", (req:Request, res:Response) =>{
     try {
         const {CPF, name, balance} = req.body
 
+        // separa o usario pelo CPF
         const findUser = users.find(e => e.CPF === CPF)     
-    
+        
+        // valida se o usario ja existe
         if(!findUser){
             errorCode = 404
             throw new Error("user not found try put CPF like this: XXX.XXX.XXX-XX")
@@ -97,7 +111,85 @@ app.put("/users/:balance", (req:Request, res:Response) =>{
 
         findUser.balance += Number(balance);
         
-        res.status(200).send(users)
+        res.status(200).send("deposit made successfully")
+
+    } catch (error:any) {
+        res.status(errorCode).send(error.message)
+    }
+})
+
+// faz o agendamento para pagar a conta
+app.put("/users/payment/:CPF/:name", (req:Request, res:Response) => {
+    let errorCode = 400
+    try {
+        // pega informação do usuario
+        const {CPF, name} = req.params 
+        let {value, date, description} = req.body
+        
+        // pega a data atual
+        const currentTime = new Date();
+        const currentYear = currentTime.getFullYear()
+        const currentDay = currentTime.getDate();
+        const currentMonth = currentTime.getMonth() + 1;
+        const currentDate = currentDay + "/" + currentMonth + "/" + currentYear
+
+        // pega a data do pagamento
+        const userData = date.split("/")
+        const userDay = Number(userData[0])
+        const userMonth = Number(userData[1])
+        const userYear = Number(userData[2])
+
+        // separa o usario pelo CPF
+        const findUser = users.find(e => e.CPF === CPF)     
+        
+        // valida se o usario ja existe
+        if(!findUser){
+            errorCode = 404
+            throw new Error("user not found")
+        }       
+        
+        // Valida se a data de agendamento é um dia que já passou
+        if(userYear <= currentYear && userMonth <= currentMonth && userDay < currentDay){
+            errorCode = 406
+            throw new Error("date is not acceptable")
+        }
+        
+        // Valida se o usario tem dinheiro para fazer o pagamento
+        if(findUser.balance < value){
+            errorCode = 406
+            throw new Error("you don't have money for that :(")
+        }
+
+        // se o usario não passou a data ele adiciona a data manualmente
+        if(!date){
+            date = currentDate
+        }
+
+        // adciona o extrato na conta do usario e faz o pagamento
+        if(!findUser.extract){
+
+            const newPayment: extract[] = [{
+                value: Number(value),
+                date: date,
+                description: description
+            }]
+            
+            findUser.extract = newPayment
+            findUser.balance -= value
+        }else{
+
+            const newPayment: extract = {
+                value: Number(value),
+                date: date,
+                description: description
+            }
+
+            findUser.extract?.push(newPayment)
+            findUser.balance -= value
+        }
+
+
+        res.status(200).send("scheduled payment")
 
     } catch (error:any) {
         res.status(errorCode).send(error.message)
