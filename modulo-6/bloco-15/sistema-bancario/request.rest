@@ -1,0 +1,41 @@
+###
+# pegar todos os usarios
+GET http://localhost:3003/allusers
+
+###
+# pegar o saldo do usario
+GET http://localhost:3003/users/111.111.123-21
+
+###
+# adcionar usuario
+POST http://localhost:3003/users
+Content-Type: application/json
+
+{
+    "name": "jon",
+    "CPF": "111.111.123-21",
+    "birthday": "22/02/2000"
+}
+
+
+###
+# fazer deposito
+PUT http://localhost:3003/users/2000
+Content-Type: application/json
+
+{
+    "name": "jon",
+    "CPF": "111.111.123-21",
+    "balance": "2000"
+}
+
+###
+# agendar pagamento
+PUT http://localhost:3003/users/payment/111.111.123-21/jon
+Content-Type: application/json
+
+{
+    "value": "200",
+    "date":"",
+    "description": "less star"
+}
