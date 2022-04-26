@@ -1,0 +1,22 @@
+###
+POST http://localhost:3003/user
+Content-Type: application/json
+
+{
+    "name": "luna",
+    "nickname": "lunaZz",
+    "email": "dale@dale"
+}
+
+###
+GET http://localhost:3003/user/001
+
+###
+POST http://localhost:3003/user/edit
+Content-Type: application/json
+
+{
+    "id": "001",
+    "name": "jonathan",
+    "nickname": "nappon"
+}
