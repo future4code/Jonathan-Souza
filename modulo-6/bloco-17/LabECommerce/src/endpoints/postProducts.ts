@@ -1,4 +1,5 @@
 import { Express, Request, Response } from "express"
+import { findUser } from "./querys/findUser";
 import { insertProduct } from "./querys/insertProduct";
 const { v4: uuidv4 } = require('uuid');
 

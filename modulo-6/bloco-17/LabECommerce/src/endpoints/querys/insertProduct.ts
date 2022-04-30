@@ -9,5 +9,5 @@ export async function insertProduct(id:string, name:string, price:number, imageU
         "image_url": imageUrl
     })
 
-    return
+    return 
 }

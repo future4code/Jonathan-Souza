@@ -2,13 +2,16 @@
 GET http://localhost:3003/users
 
 ###
+GET http://localhost:3003/products
+
+###
 POST http://localhost:3003/users
 Content-Type: application/json
 
 {
-    "name":"teste1",
-    "email":"email@email.com",
-    "password": "tesenha1"
+    "name":"teste2",
+    "email":"email2@email.com",
+    "password": "tesenha2"
 }
 
 ###
@@ -19,4 +22,14 @@ Content-Type: application/json
     "name": "compiuter",
     "price": 2000,
     "imageUrl": "https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ"
+}
+
+###
+POST http://localhost:3003/purchase
+Content-Type: application/json
+
+{
+    "userId": "",
+    "productId": "69dede0f-4272-4a29-8fac-e953e06",
+    "quantity": 2
 }
