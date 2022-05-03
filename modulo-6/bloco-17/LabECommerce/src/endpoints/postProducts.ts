@@ -11,6 +11,7 @@ export const postProducts = async(req: Request,res: Response): Promise<void> =>{
         let price = req.body.price as number
         let imageUrl = req.body.imageUrl as string
         
+        // Checa se os campos estão preenchidos
         if(!name){
             errorCode = 400
             throw new Error("you must fill the field *name*")

@@ -11,7 +11,7 @@ export const postPurchase = async(req: Request,res: Response): Promise<void> =>{
         const id = uuidv4()
         const {userId, productId, quantity} = req.body
         let totalPrice = 0
-
+        
         // procura na tabela do BD o produto selecionado e calcular o preço total
         let allProduct = await findProduct()
         const productSelected = allProduct.find((e:Product) => {
@@ -37,7 +37,7 @@ export const postPurchase = async(req: Request,res: Response): Promise<void> =>{
 
         insertPurchases(id, userId, productId, quantity, totalPrice)
         
-        res.status(201).send("completed purchase")
+        res.status(201).send("finalized purchase")
     } catch (error:any) {
         console.log(error)
         res.status(errorCode).send(error.message || error.sqlMessage)

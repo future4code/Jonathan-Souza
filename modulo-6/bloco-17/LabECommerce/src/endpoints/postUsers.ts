@@ -1,4 +1,5 @@
 import { Express, Request, Response } from "express"
+import { User } from "../type";
 import { findUser } from "./querys/findUser";
 import { registerUser } from "./querys/registerUser";
 const { v4: uuidv4 } = require('uuid');
@@ -10,7 +11,8 @@ export const postUsers = async(req: Request,res: Response): Promise<void> =>{
         let name = req.body.name
         let email = req.body.email
         let password = req.body.password
-    
+        
+        // Checa se o os campos estão todos preenchidos
         if(!name){
             errorCode = 400
             throw new Error("you must fill the field *name*")
@@ -26,7 +28,8 @@ export const postUsers = async(req: Request,res: Response): Promise<void> =>{
 
         let users = await findUser()
 
-        users.map((e: { email: any; }) => {
+        // Checa se o email passado ja esta registrado
+        users.map((e: User) => {
             if(e.email === email){
                 errorCode = 400
                 throw new Error("email already registred")

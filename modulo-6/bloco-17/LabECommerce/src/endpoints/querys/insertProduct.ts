@@ -4,7 +4,7 @@ export async function insertProduct(id:string, name:string, price:number, imageU
     const result = await connection("labecommerce_products")
     .insert({
         "id": id,
-        "name": name,
+        "product_name": name,
         "price": price,
         "image_url": imageUrl
     })
