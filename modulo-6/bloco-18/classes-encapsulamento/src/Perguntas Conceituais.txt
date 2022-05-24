@@ -1,0 +1,16 @@
+Exercicio 1
+
+a) Para que serve o construtor dentro de uma classe e como fazemos para chamá-lo?
+
+    - o constructor serve para montar uma classe, chamamos por meio de uma função.
+
+b) Copie o código abaixo para o seu exercício de hoje; crie uma instância dessa classe.
+Quantas vezes a mensagem "Chamando o construtor da classe User" foi impressa no terminal?
+
+    - a mensagem foi impressa somente uma vez, pois chamamos o construtor e a função da classe  
+    apenas 1x
+
+c) Como conseguimos ter acesso às propriedades privadas de uma classe?
+
+    por meio de getters e setters, que são funções dentro da propria class, pois só podemos
+    acessar as propriedades privadas dentro da propria classe
