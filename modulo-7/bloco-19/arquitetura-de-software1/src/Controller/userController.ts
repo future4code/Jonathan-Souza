@@ -9,7 +9,7 @@ export class UserController{
     ) => {
         try {
             const { name, email, password } = req.body
-            
+
             const input = {
                 name,
                 email,
@@ -20,6 +20,20 @@ export class UserController{
             userBussines.createUser(input)
 
             res.status(201).send({ message: "Usuario criado com sucesso!"})
+        } catch (error:any) {
+            res.status(400).send(error.message)
+        }
+    }
+
+    public getUser =async (
+        req:Request,
+        res:Response
+    ):Promise<any> => {
+        try {
+            const userBussines = new UserBusiness
+            const result = await userBussines.getUser()
+    
+            res.status(200).send({message: result})
         } catch (error:any) {
             res.status(400).send(error.message)
         }

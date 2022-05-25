@@ -14,4 +14,15 @@ export class UserDataBase extends BaseDataBase{
             throw new Error(error.message)
         }
     }
+
+    public getUsers = async ():Promise<any> => {
+        try {
+         
+            const result = await UserDataBase.connection("User_Arq")
+    
+            return result
+        } catch (error:any) {
+            throw new Error(error.message)
+        }
+    }
 }

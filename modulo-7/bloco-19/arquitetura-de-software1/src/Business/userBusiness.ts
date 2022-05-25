@@ -28,4 +28,17 @@ export class UserBusiness{
             throw new Error(error.message)
         }
     }
+
+    public getUser = async ():Promise<any> => {
+        try {           
+                
+            const userDB = new UserDataBase()
+            const result = await userDB.getUsers()
+            console.log(result);
+            
+            return result
+        } catch (error:any) {
+            throw new Error(error.message)
+        }
+    }
 }
