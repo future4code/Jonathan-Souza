@@ -1,4 +1,7 @@
 ###
+GET http://localhost:3003/post/find/001
+
+###
 POST http://localhost:3003/user/create
 Content-Type: application/json
 
@@ -6,4 +9,15 @@ Content-Type: application/json
     "name": "Juvenal",
     "email": "Juvenal@email.com.br",
     "password": "12389536254jJ@"
+}
+
+###
+POST http://localhost:3003/post/create
+Content-Type: application/json
+
+{
+    "photo": "foto de gato", 
+    "description": "gato bunitu", 
+    "type": "normal", 
+    "authorId": "c1d5fd36-7bb5-4299-81e9-5d044a51c807"
 }

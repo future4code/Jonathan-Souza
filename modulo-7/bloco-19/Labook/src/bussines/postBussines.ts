@@ -14,9 +14,8 @@ export class PostBussines {
             description,
             type,
             authorId
-        }
-
-        const postDB = new PostDataBase().create(createPost)
+        }        
+        await new PostDataBase().create(createPost)
     }
 
     async find (id:AuthenticationData):Promise<any> {

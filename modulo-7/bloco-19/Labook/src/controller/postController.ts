@@ -15,7 +15,8 @@ export class PostController {
                 authorId
             }
     
-            const postBussines = new PostBussines().create(input)
+            await new PostBussines().create(input)
+            res.status(201).send({message: "post criado"})
         } catch (error:any) {
             res.status(500).send(error.sqlMessage || error.message);
         }
