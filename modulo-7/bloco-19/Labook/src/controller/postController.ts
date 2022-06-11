@@ -16,7 +16,7 @@ export class PostController {
             }
     
             await new PostBussines().create(input)
-            res.status(201).send({message: "post criado"})
+            res.status(201).send({message: "post criado com sucesso!"})
         } catch (error:any) {
             res.status(500).send(error.sqlMessage || error.message);
         }

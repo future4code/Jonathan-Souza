@@ -1,9 +1,9 @@
 import { PostDataBase } from "../data/postDataBase";
-import { AuthenticationData, PostDTO, PostInput, postOutput } from "../model/postDTO";
+import { AuthenticationData, PostDTO, postInput, postOutput } from "../model/postDTO";
 import { generateId } from "../services/generateID";
 
 export class PostBussines {
-    async create(post:PostInput):Promise<void> {
+    async create(post:postInput):Promise<void> {
         const { photo, description, type, authorId } = post
 
         const id = generateId()

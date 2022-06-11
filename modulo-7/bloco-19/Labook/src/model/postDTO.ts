@@ -27,13 +27,6 @@ export interface postOutput {
     authorId: string
 }
 
-export interface PostInput {
-    photo: string,
-    description: string,
-    type: POST_TYPES,
-    authorId: string
-}
-
 export interface AuthenticationData {
     id: string
 }

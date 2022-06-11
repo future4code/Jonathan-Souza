@@ -21,3 +21,12 @@ Content-Type: application/json
     "type": "normal", 
     "authorId": "c1d5fd36-7bb5-4299-81e9-5d044a51c807"
 }
+
+###
+POST http://localhost:3003/friend/create
+Content-Type: application/json
+
+{
+    "userId": "001",
+    "friendId": "002"
+}

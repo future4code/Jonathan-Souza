@@ -16,7 +16,7 @@ export class UserController {
             const userBussines = new UserBussines
             userBussines.create(input)
 
-            res.status(201).send({message: "user registred successfuly"})
+            res.status(201).send({message: "Usario criado com sucesso!"})
         } catch (error:any) {
             res.status(500).send(error.sqlMessage || error.message);
         }

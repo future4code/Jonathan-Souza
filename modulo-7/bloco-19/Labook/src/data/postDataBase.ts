@@ -3,11 +3,9 @@ import { DataBase } from "./dataBase";
 
 export class PostDataBase extends DataBase {    
     private static TABLE_NAME = "labook_posts"
+    
     async create (post:PostDTO):Promise<void>{
-        
-        console.log("input do post:",post);
-        
-        
+                
         await DataBase.connection
         .insert({
             id : post.id,
