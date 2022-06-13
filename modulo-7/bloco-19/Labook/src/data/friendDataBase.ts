@@ -38,6 +38,7 @@ export class FriendDataBase extends DataBase {
         .from(FriendDataBase.TABLE_NAME)
         .leftJoin("labook_posts", "labook_friends.friend_id", "labook_posts.author_id")
         .where({user_id: req.userId})
+        .orderBy("labook_posts.created_at", "desc")
 
         return result
     }
