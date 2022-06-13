@@ -8,7 +8,6 @@ export async function CheckFriends(userId:string, friendId:string):Promise<boole
         friendId
     }
     const check = await friendDB.find(checkId)
-    console.log(check);
     
     if(!check[0]){
         return false

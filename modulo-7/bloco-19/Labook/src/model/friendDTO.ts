@@ -9,3 +9,6 @@ export interface friendInput{
     friendId: string
 }
 
+export interface friendFeedInput{
+    userId: string
+}

@@ -1,25 +1,43 @@
-import { friendDTO, friendInput } from "../model/friendDTO";
+import { friendDTO, friendFeedInput, friendInput } from "../model/friendDTO";
 import { DataBase } from "./dataBase";
 
 export class FriendDataBase extends DataBase {    
     private static TABLE_NAME = "labook_friends"
     
-    async create (post:friendDTO):Promise<void>{ 
+    async create (req:friendDTO):Promise<void>{ 
         await DataBase.connection
         .insert({
-            id: post.id,
-            user_id: post.userId,
-            friend_id: post.friendId
+            id: req.id,
+            user_id: req.userId,
+            friend_id: req.friendId
         })
         .into(FriendDataBase.TABLE_NAME)
     }
 
-    async find (get:friendInput):Promise<any>{
+    async find (req:friendInput):Promise<any>{
         const result = await DataBase.connection
         .select("*")
-        .where({user_id: get.userId, friend_id: get.friendId})
-        .orWhere({user_id: get.friendId, friend_id: get.userId})
+        .where({user_id: req.userId, friend_id: req.friendId})
+        .orWhere({user_id: req.friendId, friend_id: req.userId})
         .from(FriendDataBase.TABLE_NAME)
+
+        return result
+    }
+
+    async delete (req:friendInput):Promise<void>{
+        await DataBase.connection
+        .where({user_id: req.userId, friend_id: req.friendId})
+        .orWhere({user_id: req.friendId, friend_id: req.userId})
+        .del()
+        .from(FriendDataBase.TABLE_NAME)
+    }
+
+    async feed (req:friendFeedInput):Promise<any>{
+        const result = await DataBase.connection
+        .select("*")
+        .from(FriendDataBase.TABLE_NAME)
+        .leftJoin("labook_posts", "labook_friends.friend_id", "labook_posts.author_id")
+        .where({user_id: req.userId})
 
         return result
     }

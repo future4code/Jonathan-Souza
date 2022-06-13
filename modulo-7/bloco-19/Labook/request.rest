@@ -2,6 +2,9 @@
 GET http://localhost:3003/post/find/001
 
 ###
+GET http://localhost:3003/friend/feed/001
+
+###
 POST http://localhost:3003/user/create
 Content-Type: application/json
 
@@ -16,10 +19,10 @@ POST http://localhost:3003/post/create
 Content-Type: application/json
 
 {
-    "photo": "foto de gato", 
-    "description": "gato bunitu", 
+    "photo": "teste do 002", 
+    "description": "teste do 002", 
     "type": "normal", 
-    "authorId": "c1d5fd36-7bb5-4299-81e9-5d044a51c807"
+    "authorId": "002"
 }
 
 ###
@@ -28,5 +31,14 @@ Content-Type: application/json
 
 {
     "userId": "001",
-    "friendId": "002"
+    "friendId": "c1d5fd36-7bb5-4299-81e9-5d044a51c807"
+}
+
+###
+DELETE http://localhost:3003/friend/delete
+Content-Type: application/json
+
+{
+    "userId": "c1d5fd36-7bb5-4299-81e9-5d044a51c807",
+    "friendId": "001"
 }
