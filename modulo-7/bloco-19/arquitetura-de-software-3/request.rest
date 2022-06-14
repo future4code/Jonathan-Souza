@@ -1,0 +1,23 @@
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name": "pelintom",
+    "email": "pelintom@email.com",
+    "password": "1239887"
+}
+
+###
+POST http://localhost:3003/movie/create
+Content-Type: application/json
+
+{
+    "title": "a volta dos que não foram",
+    "description": "um grupo de humanos esperando a volta dos que não foram",
+    "yearRelease": 2000,
+    "durationMinutes": 9999
+}
+
+###
+GET http://localhost:3003/user/alluser
+
