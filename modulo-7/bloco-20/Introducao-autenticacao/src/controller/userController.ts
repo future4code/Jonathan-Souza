@@ -4,11 +4,12 @@ import { UserBussines } from "../bussines/userBussines";
 export class UserController {
     async create(req:Request, res:Response){
         try {
-            const { email, password } = req.body;
+            const { email, password, role } = req.body;
 
             const input = {
                 email,
-                password
+                password,
+                role
             }
 
             const token = await new UserBussines().signup(input)
