@@ -1,0 +1,28 @@
+###
+GET http://localhost:3003/user/profile/
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ2OTM0ZjM2LTgxMTEtNGQzNi04NjY3LWZmZWM4ZGNmM2QyMyIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NTU5NDUxNzksImV4cCI6MTY1NTk0NTIzOX0.M9hdKEw4RXNgYjKkYrqSMlatX4r-3mXXecVv4WnYgiE
+
+###
+GET http://localhost:3003/user/
+Authorization:
+
+
+###
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+    "email": "gorila@email.com.br",
+    "name": "gorila ila",
+    "password": "123456",
+    "role": "normal"
+}
+
+###
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+    "email": "gorila@email.com.br",
+    "password": "123456"
+}
