@@ -1,21 +1,22 @@
+# ------------------- USER ------------------- #
+
 ###
 GET http://localhost:3003/user/profile/
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ2OTM0ZjM2LTgxMTEtNGQzNi04NjY3LWZmZWM4ZGNmM2QyMyIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NTU5NDUxNzksImV4cCI6MTY1NTk0NTIzOX0.M9hdKEw4RXNgYjKkYrqSMlatX4r-3mXXecVv4WnYgiE
-
-###
-GET http://localhost:3003/user/
 Authorization:
 
+###
+GET http://localhost:3003/user/46934f36-8111-4d36-8667-ffec8dcf3d23/
+Authorization:
 
 ###
 POST http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
-    "email": "gorila@email.com.br",
-    "name": "gorila ila",
+    "email": "orangotango@email.com.br",
+    "name": "orangotango",
     "password": "123456",
-    "role": "normal"
+    "role": "admin"
 }
 
 ###
@@ -25,4 +26,39 @@ Content-Type: application/json
 {
     "email": "gorila@email.com.br",
     "password": "123456"
+}
+
+###
+POST http://localhost:3003/user/follow/
+Content-Type: application/json
+Authorization: 
+
+{
+    "userToFollowId": ""
+}
+
+###
+DELETE http://localhost:3003/user/unfollow/
+Content-Type: application/json
+Authorization: 
+
+{
+    "userToUnfollowId": ""
+}
+
+
+# ------------------- RECIPE ------------------- #
+
+###
+GET http://localhost:3003/recipe/create/c2d551f2-4840-46d5-b256-7a719fc88346
+Authorization:
+
+###
+POST http://localhost:3003/recipe/create
+Content-Type: application/json
+Authorization:
+
+{
+    "title": "Bolo de banana",
+    "description": "Coloca banana e farinha"
 }

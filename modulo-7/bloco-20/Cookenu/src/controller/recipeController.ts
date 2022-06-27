@@ -28,9 +28,14 @@ export class RecipeController {
     public async getRecipe(req:Request, res:Response){
         try {
             const id = req.params.id
-            const token = req.headers.authorization
+            const token = req.headers.authorization as string
 
-            const result = await new RecipeBussines().getRecipe(id)
+            const input = {
+                id,
+                token
+            }
+
+            const result = await new RecipeBussines().getRecipe(input)
 
             res.status(200).send({result})
         } catch (error:any) {

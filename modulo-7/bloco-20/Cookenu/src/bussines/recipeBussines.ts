@@ -1,7 +1,15 @@
 import { generateId } from './../services/generateID';
-import { FieldEmpty } from '../error/customError';
+import {
+    FieldEmpty,
+    NoLog
+} from '../error/customError';
 import { getData } from '../services/authentication';
-import { recipeDTO, recipeInput, recipeOutput } from './../model/recipeDTO';
+import {
+    getRecipeInput,
+    recipeDTO,
+    recipeInput,
+    recipeOutput
+} from './../model/recipeDTO';
 import { RecipeDataBase } from '../data/recipeDataBase';
 
 export class RecipeBussines {
@@ -10,7 +18,7 @@ export class RecipeBussines {
         console.log("bussines",req);
         
         if (!title || !description){
-            throw new FieldEmpty
+            throw new FieldEmpty()
         }
 
         const userData = getData(token)
@@ -27,10 +35,13 @@ export class RecipeBussines {
         await new RecipeDataBase().create(input)
     }
 
-    public async getRecipe(id:string):Promise<recipeOutput>{
-        
+    public async getRecipe(req:getRecipeInput):Promise<recipeOutput>{
+        const {id, token} = req
+
         if(!id){
-            throw new FieldEmpty
+            throw new FieldEmpty()
+        }else if (!token){
+            throw new NoLog()
         }
 
         const recipe = await new RecipeDataBase().getRecipe(id)

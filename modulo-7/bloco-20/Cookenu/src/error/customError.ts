@@ -40,3 +40,8 @@ export class FieldEmpty extends CustomError{
     }
 }
 
+export class NoLog extends CustomError{
+    constructor(){
+        super(400, "Usuário deve estar logado")
+    }
+}

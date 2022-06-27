@@ -14,3 +14,10 @@ CREATE TABLE cook_recipe (
     user_id VARCHAR(255) NOT NULL,
     FOREIGN KEY (user_id) REFERENCES cook_users(id)
 );
+
+CREATE TABLE cook_follow(
+    user_id VARCHAR(255) NOT NULL,
+    user_to_follow_id VARCHAR(255) NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES cook_users(id),
+    FOREIGN KEY (user_to_follow_id) REFERENCES cook_users(id)
+);

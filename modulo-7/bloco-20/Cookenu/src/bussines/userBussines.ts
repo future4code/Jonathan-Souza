@@ -63,22 +63,22 @@ export class UserBussines {
         const { email, password } = req;
 
         if (!email || !password) {
-            throw new FieldEmpty;
+            throw new FieldEmpty();
         }
 
         if (!email.includes("@")) {
-            throw new InvalidEmail;
+            throw new InvalidEmail();
         }
 
         const user = await new UserDataBase().getUserByEmail(email);
 
         if (!user || user.email !== email) {
-            throw new InvalidEmail;
+            throw new InvalidEmail();
         }
 
         const comparePassword = await new HashManager().comparePassword(password, user.password)
         if(!comparePassword) {
-            throw new InvalidPassword;
+            throw new InvalidPassword();
         }
 
 
@@ -93,7 +93,7 @@ export class UserBussines {
         const user = await new UserDataBase().getUserById(data.id)
 
         if(!user){
-            throw new Unauthorized
+            throw new Unauthorized()
         }
 
         const output = {
@@ -109,13 +109,13 @@ export class UserBussines {
         const data = getData(token);
        
         if(data.role === ROLE.NORMAL){
-            throw new Unauthorized
+            throw new Unauthorized()
         }
                 
         const user = await new UserDataBase().getUserById(id)
 
         if(!user){
-            throw new UserNotFound
+            throw new UserNotFound()
         }
             
         const output = {

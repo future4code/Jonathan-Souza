@@ -17,3 +17,8 @@ export interface recipeOutput{
     description: string,
     createAt: Date
 }
+
+export interface getRecipeInput {
+    id: string,
+    token: string
+}
