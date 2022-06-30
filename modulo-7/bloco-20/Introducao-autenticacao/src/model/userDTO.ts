@@ -1,15 +1,17 @@
 export interface userSignupDTO {
-    id:string
+    id:string;
     email: string;
     password: string;
+    role: string;
 }
 
 export interface userSignup {
-    email: string
+    email: string;
     password: string;
+    role: string;
 }
 
 export interface userLogin {
-    email: string
+    email: string;
     password: string;
 }

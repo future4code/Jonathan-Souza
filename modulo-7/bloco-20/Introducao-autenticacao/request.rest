@@ -1,13 +1,14 @@
 ###
 GET http://localhost:3003/user/profile/
-Authorization:
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlNzcxNWM0LTc2NWMtNDVlMS05ZjExLTFlYTVkZDU5MWNjMiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY1NTg1MzgyNiwiZXhwIjoxNjU1ODUzODg2fQ.W-YJnGwYrWhrsuydCkzLONv62xZHLFABtcqMyqrDG0w
 ###
 POST http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
-    "email": "orangotango@email.com.br",
-    "password": "123456"
+    "email": "babuino@email.com.br",
+    "password": "123456",
+    "role": "admin"
 }
 
 ###
@@ -15,6 +16,6 @@ POST http://localhost:3003/user/login
 Content-Type: application/json
 
 {
-    "email": "orangotango@email.com.br",
+    "email": "babuino@email.com.br",
     "password": "123456"
 }
