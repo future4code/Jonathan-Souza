@@ -17,7 +17,7 @@ export class UserController {
             if(!req.body.email || !req.body.password || !req.body.name){
                 throw new EmptyFields();
             }
-
+            console.log("cheguei no controller");
             const input = {
                 email: req.body.email,
                 password: req.body.password,
@@ -28,7 +28,7 @@ export class UserController {
             const token = await userBussines.signup(input)
             res.status(201).send({message: "Usuário criado com sucesso!"})
         } catch (error:any) {
-            res.status(error.code).send({error: error.message || error.sqlMessage})
+            res.status(400).send({error: error.message || error.sqlMessage})
         }
     }
 

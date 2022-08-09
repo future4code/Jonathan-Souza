@@ -2,10 +2,10 @@ POST http://localhost:3000/user/signup
 Content-Type: application/json
 
 {
-    "name": "teste1",
-    "email": "email@email.com",
+    "name": "admin",
+    "email": "admin@email.com",
     "password": "pas123",
-    "role": "NORMAL"
+    "role": "ADMIN"
 }
 
 ###
@@ -13,6 +13,16 @@ POST http://localhost:3000/user/login
 Content-Type: application/json
 
 {
-    "email": "email@email.com",
+    "email": "admin@email.com",
     "password": "pas123"
+}
+
+###
+POST http://localhost:3000/product/insert
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNkOTM4MWVkLTVhNTMtNDg2Yy05ZGY3LTY3NDdjOGYwYzg0NiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2MDAwOTA3NSwiZXhwIjoxNjYwMDA5Njc1fQ.lBHavl3wT8nc_hcsA-Se1YVPLAzdahYv3ZAAutT_f-U
+Content-Type: application/json
+
+{
+    "name": "teste2",
+    "tag": ["tag1", "tag2","tag3"]
 }

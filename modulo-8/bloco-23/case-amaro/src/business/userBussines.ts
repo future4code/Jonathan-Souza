@@ -11,7 +11,6 @@ import {
     IGenerateId
 } from './ports';
 
-
 export class UserBussines {
     constructor(
         private hashManager: IHashManager,
@@ -21,29 +20,26 @@ export class UserBussines {
     
     public async signup(user:UserInput): Promise<void>{ 
         let { email, password, name, role } = user;
+        
+        const id = this.generatorID.generate();
 
         if(!email.includes("@")){
             throw new InvalidEmail()
-        }
-
-        const findUser = await new UserDataBase().getUserByEmail(email);
-        if(findUser){
-            throw new EmailCadastre();
         }
 
         if(password.length < 6){
             throw new InvalidPassword();
         }
 
-        const id = this.generatorID.generate();
         const hashPassword = await this.hashManager.hash(password);
+
         const input = {
             id,
             name,
             email,
             password: hashPassword,
             role
-        }
+        }        
 
         const userModel = User.toUserModel(input);
         new UserDataBase().signup(userModel);

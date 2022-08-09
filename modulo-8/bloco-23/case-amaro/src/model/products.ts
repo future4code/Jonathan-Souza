@@ -34,3 +34,9 @@ export class Products{
         return new Products(product.id, product.name, product.tag);
     }
 }
+
+export interface productsInput {
+    name: string;
+    tag: string[];
+    token: string;
+}
