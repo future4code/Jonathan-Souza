@@ -49,6 +49,20 @@ export class ProductBussines {
             }
 
             productDB.insertTag(inputTag)
-        });        
+        });       
+    }
+
+    public async getProductById(input:any): Promise<any>{
+        const { id, token } = input;
+
+        const acessToken = await this.authenticator.getData(token);
+
+        if(!acessToken.role && !acessToken.id){
+            throw new InvalidToken();
+        }
+
+        const result = await productDB.getProductById(id)
+
+        return result;
     }
 }

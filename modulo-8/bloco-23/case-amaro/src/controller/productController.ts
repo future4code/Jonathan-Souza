@@ -31,4 +31,22 @@ export class ProductController {
             res.status(error.code).send({error: error.message || error.sqlMessage})
         }
     }
+
+    public async getProductById(req: Request, res: Response) {
+        try{
+            if(!req.headers.authorization){
+                throw new NoLog();
+            }
+
+            const input = {
+                id: req.params.id,
+                token: req.headers.authorization as string
+            }
+
+            const product = await productBussines.getProductById(input)
+            res.status(200).send({product})
+        } catch (error:any) {
+            res.status(500).send({error: error.message || error.sqlMessage})
+        }
+    }
 }
