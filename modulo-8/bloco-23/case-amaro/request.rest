@@ -19,14 +19,13 @@ Content-Type: application/json
 
 ###
 POST http://localhost:3000/product/insert
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNkOTM4MWVkLTVhNTMtNDg2Yy05ZGY3LTY3NDdjOGYwYzg0NiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2MDA5MTU2NywiZXhwIjoxNjYwMDkyMTY3fQ.ORUQBKrCsemo5Gd1-pUApjmafE7SXhd1qoleKSWOUag
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNkOTM4MWVkLTVhNTMtNDg2Yy05ZGY3LTY3NDdjOGYwYzg0NiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2MDYwOTM0NSwiZXhwIjoxNjYwNjA5OTQ1fQ.YIIJrOJBwyFy-p_A_AIeYjp08oDhha2pCS-3ceb-NIg
 Content-Type: application/json
 
 {
-    "name": "teste2",
-    "tag": ["tag1", "tag2","tag3"]
+    "name": "teste4",
+    "tag": ["tag1", "tag5"]
 }
 
 ###
-GET http://localhost:3000/product/83a7458e-2a90-41db-aa32-65cd66ce329d
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNkOTM4MWVkLTVhNTMtNDg2Yy05ZGY3LTY3NDdjOGYwYzg0NiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2MDA5NDk3OCwiZXhwIjoxNjYwMDk1NTc4fQ.p6pVPDk48fh896hfrnp7UdbhEe4TDowS5BXctCJRBtA
+GET http://localhost:3000/product/
