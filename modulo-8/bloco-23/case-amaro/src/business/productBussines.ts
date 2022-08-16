@@ -52,16 +52,31 @@ export class ProductBussines {
         });       
     }
 
-    public async getProductById(input:any): Promise<any>{
-        const { id, token } = input;
-
-        const acessToken = await this.authenticator.getData(token);
-
-        if(!acessToken.role && !acessToken.id){
-            throw new InvalidToken();
-        }
-
+    public async getProductById(id:string): Promise<any>{
         const result = await productDB.getProductById(id)
+
+        return result;
+    }
+
+    public async getProductsByTags(tag:string): Promise<any>{
+        const result = await productDB.getAllProducts()
+        
+        let products: any[] = []
+        result.forEach((e: any) => {
+            if (e.TAGS.includes(tag)) {
+                products.push(e)
+            }
+        })
+       
+        return products
+    }
+
+    public async getAllProducts(tag?: string): Promise<any>{
+        let result = await productDB.getAllProducts()
+
+        if(tag){
+            result = await this.getProductsByTags(tag)
+        }
 
         return result;
     }

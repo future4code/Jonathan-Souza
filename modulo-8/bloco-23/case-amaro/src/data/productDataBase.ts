@@ -31,9 +31,17 @@ export class ProductDataBase extends BaseDatabase {
             LEFT JOIN amaro_tags on amaro_products.id = amaro_tags.product_id
             WHERE amaro_products.id = "${id}"
         `)
-    
-
         return result[0];
     }
 
+    public async getAllProducts(): Promise<any> {
+        const result = await this.getConnection().raw(`
+            SELECT amaro_products.name as PRODUCT,
+            GROUP_CONCAT(DISTINCT amaro_tags.tag) as TAGS
+            FROM amaro_products
+            LEFT JOIN amaro_tags on amaro_products.id = amaro_tags.product_id
+            GROUP BY amaro_products.id
+        `)
+        return result[0];
+    }
 }

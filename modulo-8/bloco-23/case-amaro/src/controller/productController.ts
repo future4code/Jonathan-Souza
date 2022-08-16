@@ -34,17 +34,21 @@ export class ProductController {
 
     public async getProductById(req: Request, res: Response) {
         try{
-            if(!req.headers.authorization){
-                throw new NoLog();
-            }
-
-            const input = {
-                id: req.params.id,
-                token: req.headers.authorization as string
-            }
-
-            const product = await productBussines.getProductById(input)
+            const id = req.params.id as string;
+    
+            const product = await productBussines.getProductById(id)
             res.status(200).send({product})
+        } catch (error:any) {
+            res.status(500).send({error: error.message || error.sqlMessage})
+        }
+    }
+
+    public async getAllProducts(req: Request, res: Response) {
+        try{
+            const tag = req.query.tag as string;
+            
+            const products = await productBussines.getAllProducts(tag)
+            res.status(200).send({products})
         } catch (error:any) {
             res.status(500).send({error: error.message || error.sqlMessage})
         }

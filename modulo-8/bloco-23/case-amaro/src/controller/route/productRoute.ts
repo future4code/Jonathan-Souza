@@ -6,3 +6,4 @@ const productController = new ProductController();
 
 productRouter.post("/insert", productController.insertProduct);
 productRouter.get("/:id", productController.getProductById);
+productRouter.get("/", productController.getAllProducts);
