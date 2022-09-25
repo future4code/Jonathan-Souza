@@ -52,8 +52,8 @@ export class CustomError extends Error {
     }
   }
 
-  export class UserNotFound extends CustomError {
+  export class NotFound extends CustomError {
     constructor(){
-      super("User not Found", 404);
+      super("Not Found", 404);
     }
   }

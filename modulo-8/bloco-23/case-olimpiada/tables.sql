@@ -1,3 +1,4 @@
+-- Active: 1662679144787@@35.226.146.116@3306@joy-419687-jonathan-souza
 CREATE TABLE competicao (
     id VARCHAR(80) PRIMARY KEY,
     nome VARCHAR(120) NOT NULL,

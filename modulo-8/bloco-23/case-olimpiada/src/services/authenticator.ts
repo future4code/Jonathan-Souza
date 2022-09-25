@@ -1,8 +1,6 @@
 import * as jwt from "jsonwebtoken";
-import { IAuthenticator } from "../bussines/ports";
 
-
-export class Authenticator implements IAuthenticator {
+export class Authenticator{
   public generateToken(input: AuthenticationData,
     expiresIn: string = process.env.ACCESS_TOKEN_EXPIRES_IN!): string {
     const token = jwt.sign(

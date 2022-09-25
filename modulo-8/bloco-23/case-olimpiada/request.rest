@@ -1,0 +1,10 @@
+###
+POST http://localhost:3000/competition/create
+Content-Type: application/json
+
+{
+    "name": "Corrida"
+}
+
+###
+GET http://localhost:3000/competition/
