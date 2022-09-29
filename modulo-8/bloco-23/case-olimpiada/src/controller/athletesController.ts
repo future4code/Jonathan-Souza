@@ -1,33 +1,36 @@
 import { Request, Response } from "express";
 import { AthletesBussines } from "../bussines/athletesBussines";
-import { IGenerateId } from "../bussines/ports";
+import { ICheckDataComp, IGenerateId } from "../bussines/ports";
 import { EmptyFields } from "../error/customError";
+import { AthleteInput } from "../model/athletes";
+import { CheckDataComp } from "../services/checkCompId";
 import { GeneratorID } from "../services/generatorID";
 
 const generatorID:IGenerateId = new GeneratorID
-const athletesBussines = new AthletesBussines(generatorID)
+const checkDataComp: ICheckDataComp = new CheckDataComp
+const athletesBussines = new AthletesBussines(generatorID, checkDataComp)
 
 export class AthletesController {
     public insert(req:Request, res:Response){
         try {
-            let {idComp, athlete, value, unity} = req.body
+            let {idComp, name, value, unity} = req.body
 
-            if(!idComp || !athlete || !value || !unity){
+            if(!idComp || !name || !value || !unity){
                 throw new EmptyFields()
             }
             
-            const input = {
+            const input:AthleteInput = {
                 idComp,
-                athlete,
+                name,
                 value,
                 unity
             }
 
             athletesBussines.insert(input)
 
-            res.status(201).send({message: "atleta adcionado com sucesso"})
-        } catch (error:any) {
-            res.status(error.code).send({error: error.message})
+            res.status(201).send({message: "Athlete successfully added"})
+        }catch (error:any) {
+            res.status(500).send(error.sqlMessage || error.message);
         }
     }
 }

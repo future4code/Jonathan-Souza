@@ -40,9 +40,11 @@ export class CustomError extends Error {
     }
   }
 
-  export class InvalidToken extends CustomError {
+  export class InvalidIdComp extends CustomError {
     constructor(){
-      super("Invalid Token", 498);
+      console.log("custom error");
+      
+      super("Invalid id competition", 498);
     }
   }
 
