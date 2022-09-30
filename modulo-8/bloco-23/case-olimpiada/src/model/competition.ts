@@ -40,3 +40,11 @@ export interface competitionOutput {
     nome: string,
     encerrada: number
 }
+
+export interface competitionRakingOutput {
+    nome: string,
+    atleta: string,
+    valor: string,
+    unidade: string,
+    ranking?: number
+}

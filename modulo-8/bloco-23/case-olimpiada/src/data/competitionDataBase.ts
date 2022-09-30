@@ -1,4 +1,4 @@
-import { Competition, competitionOutput } from "../model/competition";
+import { Competition, competitionOutput, competitionRakingOutput } from "../model/competition";
 import { BaseDatabase } from "./baseDataBase";
 
 export class CompetitionDataBase extends BaseDatabase {
@@ -30,7 +30,7 @@ export class CompetitionDataBase extends BaseDatabase {
         return result[0]
     }
 
-    public async getRaking(id:string):Promise<any>{
+    public async getRaking(id:string):Promise<competitionRakingOutput[]>{
         let result = await this.getConnection()
             .select("competicao.nome","competidores.atleta", "competidores.valor", "competidores.unidade")
             .orderBy("competidores.valor", "DESC")

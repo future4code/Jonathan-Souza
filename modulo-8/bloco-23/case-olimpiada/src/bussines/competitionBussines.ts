@@ -2,6 +2,7 @@ import {
     CustomError,
     InvalidIdComp,
     NotFound } from '../error/customError';
+import { competitionRakingOutput } from '../model/competition';
 import { CompetitionDataBase } from './../data/competitionDataBase';
 import { 
     ICheckDataComp,
@@ -42,7 +43,18 @@ export class CompetitionBussines {
             throw new InvalidIdComp
         }
 
-        return result
+        let ranking = result.map((item: competitionRakingOutput, index) =>{
+                let rank = {
+                    "competicao": item.nome,
+                    "atleta": item.atleta,
+                    "pontuacao": item.valor + " " + item.unidade,
+                    "ranking": item.ranking = 1 + index
+                }
+                return rank        
+            }
+        );
+        
+        return ranking
     }
 
     public async changeStatus(id:string):Promise<any>{
@@ -55,8 +67,19 @@ export class CompetitionBussines {
         }
 
         await new CompetitionDataBase().changeStatus(id)
-        const ranking = await new CompetitionDataBase().getRaking(id)
+        const result = await new CompetitionDataBase().getRaking(id)
 
+        let ranking = result.map((item: competitionRakingOutput, index) =>{
+                let rank = {
+                    "competicao": item.nome,
+                    "atleta": item.atleta,
+                    "pontuacao": item.valor + " " + item.unidade,
+                    "ranking": item.ranking = 1 + index
+                }
+                return rank        
+            }
+        );
+        
         return ranking
     }
 }

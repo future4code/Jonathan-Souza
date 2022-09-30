@@ -21,7 +21,7 @@ Content-Type: application/json
 
 {
     "idComp": "6a32215a-31a5-4ec2-b78c-7718a16d7932",
-    "name": "hulk",
-    "value": "100",
+    "name": "chimpa",
+    "value": "8",
     "unity": "m"
 }
