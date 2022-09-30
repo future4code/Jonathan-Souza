@@ -18,7 +18,8 @@ export class AthletesBussines {
 
     public async insert(athlete:AthleteInput):Promise<void>{
         let { idComp, name, value, unity } = athlete
-        
+        const athleteDB = new AthletesDataBase()
+
         if(name.length < 3){
             throw new InvalidName
         }
@@ -39,13 +40,19 @@ export class AthletesBussines {
             throw new CustomError("This competition its over", 406)
         }
 
-        const input = {
-            idComp,
-            name,
-            value,
-            unity
+        if(await this.checkDataComp.checkCompetition(idComp)){
+            console.log("entrei sem ser o lançamento de dardos");
+            
+            athleteDB.insert(athlete)
         }
 
-        new AthletesDataBase().insert(input)
+        const checkValue = await athleteDB.getAthleteByName(name, idComp)
+
+        if(!checkValue){
+            athleteDB.insert(athlete)
+        }else if(checkValue.valor < value){
+            athleteDB.changeValue(athlete)
+        }
+        
     }
 }

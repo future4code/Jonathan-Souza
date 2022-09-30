@@ -49,3 +49,11 @@ export interface AthleteInput {
     value: string;
     unity: string
 }
+
+
+export interface AthleteOutput{
+    id_competicao: string;
+    nome: string;
+    valor: string;
+    unidade: string
+}

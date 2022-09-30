@@ -32,11 +32,12 @@ export class CompetitionDataBase extends BaseDatabase {
 
     public async getRaking(id:string):Promise<any>{
         let result = await this.getConnection()
-            .select("*")
-            .from(CompetitionDataBase.TABLE_NAME)
+            .select("competicao.nome","competidores.atleta", "competidores.valor", "competidores.unidade")
+            .orderBy("competidores.valor", "DESC")
             .leftJoin("competidores", "competicao.id", "competidores.id_competicao")
-            .orderBy("competidores.valor", "desc")
-
+            .where({id_competicao: id})
+            .from(CompetitionDataBase.TABLE_NAME)
+            
         
         return result
     }

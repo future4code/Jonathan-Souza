@@ -2,17 +2,17 @@
 GET http://localhost:3000/competition/
 
 ###
-GET http://localhost:3000/competition/ranking/88327135-9e45-4e0d-af7b-b351e0082ff4
+GET http://localhost:3000/competition/ranking/6a32215a-31a5-4ec2-b78c-7718a16d7932
 
 ###
-PUT http://localhost:3000/competition/status/88327135-9e45-4e0d-af7b-b351e0082ff4
+PUT http://localhost:3000/competition/status/f9f6c2be-04e6-4bab-90b5-f44f800fbb52
 
 ###
 POST http://localhost:3000/competition/create
 Content-Type: application/json
 
 {
-    "name": "Nado Sicronizado"
+    "name": "lançamento de dardos Final"
 }
 
 ###
@@ -20,8 +20,8 @@ POST http://localhost:3000/athletes/insert
 Content-Type: application/json
 
 {
-    "idComp": "88327135-9e45-4e0d-af7b-b351e0082ff4",
-    "name": "Jureval",
-    "value": "4",
-    "unity": "s"
+    "idComp": "6a32215a-31a5-4ec2-b78c-7718a16d7932",
+    "name": "hulk",
+    "value": "100",
+    "unity": "m"
 }

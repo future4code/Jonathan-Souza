@@ -3,7 +3,7 @@ import { AthletesBussines } from "../bussines/athletesBussines";
 import { ICheckDataComp, IGenerateId } from "../bussines/ports";
 import { EmptyFields } from "../error/customError";
 import { AthleteInput } from "../model/athletes";
-import { CheckDataComp } from "../services/checkCompId";
+import { CheckDataComp } from "../services/checkComp";
 import { GeneratorID } from "../services/generatorID";
 
 const generatorID:IGenerateId = new GeneratorID
@@ -28,7 +28,7 @@ export class AthletesController {
 
             athletesBussines.insert(input)
 
-            res.status(201).send({message: "Athlete successfully added"})
+            res.status(201).send({message: "Athlete score registered"})
         }catch (error:any) {
             res.status(500).send(error.sqlMessage || error.message);
         }

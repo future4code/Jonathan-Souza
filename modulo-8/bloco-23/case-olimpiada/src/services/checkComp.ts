@@ -21,4 +21,15 @@ export class CheckDataComp implements ICheckDataComp{
             return true
        }
     }
+
+    public async checkCompetition(id:string):Promise<boolean>{
+        const competitionData = await new CompetitionDataBase().getCompetitionByID(id)
+
+        if(!competitionData.nome.includes("lançamento de dardos")){
+            return true
+        }else{
+            return false
+        }
+       
+    }
 }

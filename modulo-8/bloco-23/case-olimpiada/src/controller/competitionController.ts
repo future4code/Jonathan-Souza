@@ -8,7 +8,7 @@ import {
     IGenerateId
 } from "../bussines/ports";
 import { EmptyFields } from "../error/customError";
-import { CheckDataComp } from "../services/checkCompId";
+import { CheckDataComp } from "../services/checkComp";
 import { GeneratorID } from "../services/generatorID";
 
 const generatorID:IGenerateId = new GeneratorID;
@@ -70,9 +70,9 @@ export class CompetitionController{
                 throw new EmptyFields
             }
 
-            await competitionBussines.changeStatus(id)
+            const ranking = await competitionBussines.changeStatus(id)
 
-            res.status(200).send({message: "competition closed"})
+            res.status(200).send({message: "competition closed", ranking: ranking})
         }catch (error:any) {
             res.status(500).send(error.sqlMessage || error.message);
         }

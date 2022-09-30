@@ -45,7 +45,7 @@ export class CompetitionBussines {
         return result
     }
 
-    public async changeStatus(id:string):Promise<void>{
+    public async changeStatus(id:string):Promise<any>{
         if(await this.checkDataComp.checkID(id)){            
             throw new InvalidIdComp           
         }
@@ -55,5 +55,8 @@ export class CompetitionBussines {
         }
 
         await new CompetitionDataBase().changeStatus(id)
+        const ranking = await new CompetitionDataBase().getRaking(id)
+
+        return ranking
     }
 }
