@@ -1,11 +1,12 @@
 ###
+// Puxar todas as competições
 GET http://localhost:3000/competition/
 
 ###
 GET http://localhost:3000/competition/ranking/6a32215a-31a5-4ec2-b78c-7718a16d7932
 
 ###
-PUT http://localhost:3000/competition/status/f9f6c2be-04e6-4bab-90b5-f44f800fbb52
+PUT http://localhost:3000/competition/status/6a32215a-31a5-4ec2-b78c-7718a16d7932
 
 ###
 POST http://localhost:3000/competition/create
