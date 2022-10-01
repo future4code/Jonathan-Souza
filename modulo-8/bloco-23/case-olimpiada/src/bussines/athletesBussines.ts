@@ -40,9 +40,7 @@ export class AthletesBussines {
             throw new CustomError("This competition its over", 406)
         }
 
-        if(await this.checkDataComp.checkCompetition(idComp)){
-            console.log("entrei sem ser o lançamento de dardos");
-            
+        if(await this.checkDataComp.checkCompetition(idComp)){           
             athleteDB.insert(athlete)
         }
 

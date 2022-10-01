@@ -42,6 +42,19 @@ export class CompetitionDataBase extends BaseDatabase {
         return result
     }
 
+    
+    public async getRacingRaking(id:string):Promise<competitionRakingOutput[]>{
+        let result = await this.getConnection()
+            .select("competicao.nome","competidores.atleta", "competidores.valor", "competidores.unidade")
+            .orderBy("competidores.valor", "ASC")
+            .leftJoin("competidores", "competicao.id", "competidores.id_competicao")
+            .where({id_competicao: id})
+            .from(CompetitionDataBase.TABLE_NAME)
+            
+        
+        return result
+    }
+
     public async changeStatus(id:string):Promise<void>{
         await this.getConnection()
             .update({encerrada: true})

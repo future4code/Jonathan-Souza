@@ -37,10 +37,12 @@ export class CompetitionBussines {
     }
 
     public async getRaking(id:string):Promise<any>{
-        const result = await new CompetitionDataBase().getRaking(id)        
+        let result = await new CompetitionDataBase().getRaking(id)        
 
         if(!result){
             throw new InvalidIdComp
+        }else if(result[0].nome.includes("100m rasos")){
+            result = await new CompetitionDataBase().getRacingRaking(id)
         }
 
         let ranking = result.map((item: competitionRakingOutput, index) =>{
@@ -67,7 +69,11 @@ export class CompetitionBussines {
         }
 
         await new CompetitionDataBase().changeStatus(id)
-        const result = await new CompetitionDataBase().getRaking(id)
+        let result = await new CompetitionDataBase().getRaking(id)
+
+        if(result[0].nome.includes("100m rasos")){
+            result = await new CompetitionDataBase().getRacingRaking(id)
+        }
 
         let ranking = result.map((item: competitionRakingOutput, index) =>{
                 let rank = {

@@ -1,6 +1,11 @@
 DESAFIO BACK END ESTANTE VIRTUAL
 
-Neste repositorio foi feito uma API de um clone do case de back end da amaro, onde consiste em criar e consultar os produtos.
+Neste repositorio foi feito uma API de um clone do case de back end da estante virtual com a seguinte premissa: 
+
+Com a chegada dos jogos olímpicos, fomos designados para construir uma API REST para o COB (Comitê Olímico Brasileiro), que será responsável por marcar e dizer os vencedores das seguintes modalidades:
+
+- 100m rasos: Menor tempo vence
+- Lançamento de Dardo: Maior distância vence
 
 ## Tecnologias Utilizadas
 
