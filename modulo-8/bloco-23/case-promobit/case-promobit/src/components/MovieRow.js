@@ -8,11 +8,20 @@ function MovieRow ({title, items}) {
     const [scrollX, setScrollX] = useState(-400)
     
     const handleLeftArrow = () => {
-        console.log("oi");
+        let scroll = scrollX + Math.round(window.innerWidth / 2)
+        if(scroll > 0){
+            scroll = 0
+        }
+        setScrollX(scroll)
     }
 
     const handleRigthArrow = () => {
-
+        let scroll = scrollX - Math.round(window.innerWidth / 2)
+        let listWidth = items.results.length * 150
+        if((window.innerWidth - listWidth) > scroll){
+            scroll = window.innerWidth - listWidth -60
+        }
+        setScrollX(scroll)
     }
     
 
@@ -20,10 +29,10 @@ function MovieRow ({title, items}) {
         <div className="movieRow">
             <h2>{title}</h2>
 
-            <div className="movieRow--left" onclick={handleLeftArrow}>
+            <div className="movieRow--left" onClick={handleLeftArrow}>
                 <NavigateBeforeIcon style={{fontsize: 60}}/>
             </div>
-            <div className="movieRow--rigth" onclick={handleRigthArrow}>
+            <div className="movieRow--rigth" onClick={handleRigthArrow}>
                 <NavigateNextIcon style={{fontsize: 60}}/>
             </div>
 

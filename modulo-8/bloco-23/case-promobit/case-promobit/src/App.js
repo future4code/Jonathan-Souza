@@ -38,6 +38,11 @@ function App(){
             <MovieRow key={key} title={item.title} items={item.items}/>
           ))}
       </section>
+      {movieList.length <= 0 &&
+      <div className="loading">
+        <iframe src="https://giphy.com/embed/3y0oCOkdKKRi0" width="480" height="350" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+      </div>
+      }
     </div>
   )
 }
