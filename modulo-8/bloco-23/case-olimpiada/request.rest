@@ -1,0 +1,28 @@
+###
+// Puxar todas as competições
+GET http://localhost:3000/competition/
+
+###
+GET http://localhost:3000/competition/ranking/40758674-3d71-441e-8ce2-9d015072b90e
+
+###
+PUT http://localhost:3000/competition/status/6a32215a-31a5-4ec2-b78c-7718a16d7932
+
+###
+POST http://localhost:3000/competition/create
+Content-Type: application/json
+
+{
+    "name": "100m rasos"
+}
+
+###
+POST http://localhost:3000/athletes/insert
+Content-Type: application/json
+
+{
+    "idComp": "40758674-3d71-441e-8ce2-9d015072b90e",
+    "name": "teste 5",
+    "value": "1",
+    "unity": "s"
+}
